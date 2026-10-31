@@ -78,6 +78,156 @@
                                           ]
                     },
                     {
+                        "id":  "subscription-insight",
+                        "name":  "订阅用量看板",
+                        "version":  "1.0.0",
+                        "description":  "查看订阅流量、到期时间与最近检查结果，支持到期提醒。",
+                        "code_url":  "plugins/subscription-insight.js",
+                        "sha256":  "06595bc92b4be263ab8b5d8bbc334f806243df11d61681066c0ad187b60360d8",
+                        "permissions":  [
+                                            "ui",
+                                            "net",
+                                            "fs:data"
+                                        ],
+                        "triggers":  [
+                                         "onManual"
+                                     ],
+                        "group":  "订阅",
+                        "tags":  [
+                                     "订阅",
+                                     "流量",
+                                     "到期"
+                                 ],
+                        "configuration":  [
+                                              {
+                                                  "id":  "url",
+                                                  "key":  "url",
+                                                  "title":  "订阅地址",
+                                                  "description":  "支持带查询参数的 HTTPS 订阅链接。",
+                                                  "component":  "Input",
+                                                  "value":  ""
+                                              },
+                                              {
+                                                  "id":  "label",
+                                                  "key":  "label",
+                                                  "title":  "显示名称",
+                                                  "component":  "Input",
+                                                  "value":  "我的订阅"
+                                              },
+                                              {
+                                                  "id":  "user-agent",
+                                                  "key":  "userAgent",
+                                                  "title":  "User-Agent 预设",
+                                                  "description":  "部分服务商只在特定 UA 下返回用量头。",
+                                                  "component":  "Select",
+                                                  "value":  "clash",
+                                                  "options":  [
+                                                                  {
+                                                                      "label":  "Clash",
+                                                                      "value":  "clash"
+                                                                  },
+                                                                  {
+                                                                      "label":  "v2rayN",
+                                                                      "value":  "v2rayn"
+                                                                  },
+                                                                  {
+                                                                      "label":  "CcoreBox",
+                                                                      "value":  "ccorebox"
+                                                                  }
+                                                              ]
+                                              },
+                                              {
+                                                  "id":  "warn-days",
+                                                  "key":  "warnDays",
+                                                  "title":  "到期提醒阈值",
+                                                  "component":  "Select",
+                                                  "value":  "7",
+                                                  "options":  [
+                                                                  {
+                                                                      "label":  "3 天",
+                                                                      "value":  "3"
+                                                                  },
+                                                                  {
+                                                                      "label":  "7 天",
+                                                                      "value":  "7"
+                                                                  },
+                                                                  {
+                                                                      "label":  "14 天",
+                                                                      "value":  "14"
+                                                                  }
+                                                              ]
+                                              },
+                                              {
+                                                  "id":  "enable-notify",
+                                                  "key":  "notify",
+                                                  "title":  "到期提醒",
+                                                  "component":  "Switch",
+                                                  "value":  true
+                                              },
+                                              {
+                                                  "id":  "auto-refresh",
+                                                  "key":  "autoRefresh",
+                                                  "title":  "面板打开时自动刷新",
+                                                  "component":  "Switch",
+                                                  "value":  true
+                                              }
+                                          ]
+                    },
+                    {
+                        "id":  "core-event-log",
+                        "name":  "核心启停时间线",
+                        "version":  "1.0.0",
+                        "description":  "记录核心启动与停止时间，在面板中查看最近事件，便于排查断线。",
+                        "code_url":  "plugins/core-event-log.js",
+                        "sha256":  "67e4b0146e7173bad1f8912b5fe5cf4e4160bd6f09273bf5b692bdc8cba6a4bf",
+                        "permissions":  [
+                                            "ui",
+                                            "fs:data",
+                                            "notify"
+                                        ],
+                        "triggers":  [
+                                         "onStartup",
+                                         "onCoreStarted",
+                                         "onCoreStopped"
+                                     ],
+                        "group":  "诊断",
+                        "tags":  [
+                                     "核心",
+                                     "日志",
+                                     "诊断"
+                                 ],
+                        "configuration":  [
+                                              {
+                                                  "id":  "enable-notify",
+                                                  "key":  "notify",
+                                                  "title":  "启停时发送通知",
+                                                  "component":  "Switch",
+                                                  "value":  false
+                                              },
+                                              {
+                                                  "id":  "limit",
+                                                  "key":  "limit",
+                                                  "title":  "保留条数",
+                                                  "component":  "Select",
+                                                  "value":  "200",
+                                                  "options":  [
+                                                                  {
+                                                                      "label":  "100",
+                                                                      "value":  "100"
+                                                                  },
+                                                                  {
+                                                                      "label":  "200",
+                                                                      "value":  "200"
+                                                                  },
+                                                                  {
+                                                                      "label":  "500",
+                                                                      "value":  "500"
+                                                                  }
+                                                              ]
+                                              }
+                                          ]
+                    },
+                    {
                         "id":  "plugin-dashboard",
                         "name":  "仪表盘示例",
                         "version":  "1.0.0",

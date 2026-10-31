@@ -1,0 +1,31 @@
+{
+  "id": "core-event-log",
+  "name": "核心启停时间线",
+  "version": "1.0.0",
+  "description": "记录核心启动与停止时间，在面板中查看最近事件，便于排查断线。",
+  "group": "诊断",
+  "tags": ["核心", "日志", "诊断"],
+  "permissions": ["ui", "fs:data", "notify"],
+  "triggers": ["onStartup", "onCoreStarted", "onCoreStopped"],
+  "configuration": [
+    {
+      "id": "enable-notify",
+      "key": "notify",
+      "title": "启停时发送通知",
+      "component": "Switch",
+      "value": false
+    },
+    {
+      "id": "limit",
+      "key": "limit",
+      "title": "保留条数",
+      "component": "Select",
+      "value": "200",
+      "options": [
+        { "label": "100", "value": "100" },
+        { "label": "200", "value": "200" },
+        { "label": "500", "value": "500" }
+      ]
+    }
+  ]
+}

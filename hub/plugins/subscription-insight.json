@@ -1,0 +1,66 @@
+{
+  "id": "subscription-insight",
+  "name": "订阅用量看板",
+  "version": "1.0.0",
+  "description": "查看订阅流量、到期时间与最近检查结果，支持到期提醒。",
+  "group": "订阅",
+  "tags": ["订阅", "流量", "到期"],
+  "permissions": ["ui", "net", "fs:data"],
+  "triggers": ["onManual"],
+  "configuration": [
+    {
+      "id": "url",
+      "key": "url",
+      "title": "订阅地址",
+      "description": "支持带查询参数的 HTTPS 订阅链接。",
+      "component": "Input",
+      "value": ""
+    },
+    {
+      "id": "label",
+      "key": "label",
+      "title": "显示名称",
+      "component": "Input",
+      "value": "我的订阅"
+    },
+    {
+      "id": "user-agent",
+      "key": "userAgent",
+      "title": "User-Agent 预设",
+      "description": "部分服务商只在特定 UA 下返回用量头。",
+      "component": "Select",
+      "value": "clash",
+      "options": [
+        { "label": "Clash", "value": "clash" },
+        { "label": "v2rayN", "value": "v2rayn" },
+        { "label": "CcoreBox", "value": "ccorebox" }
+      ]
+    },
+    {
+      "id": "warn-days",
+      "key": "warnDays",
+      "title": "到期提醒阈值",
+      "component": "Select",
+      "value": "7",
+      "options": [
+        { "label": "3 天", "value": "3" },
+        { "label": "7 天", "value": "7" },
+        { "label": "14 天", "value": "14" }
+      ]
+    },
+    {
+      "id": "enable-notify",
+      "key": "notify",
+      "title": "到期提醒",
+      "component": "Switch",
+      "value": true
+    },
+    {
+      "id": "auto-refresh",
+      "key": "autoRefresh",
+      "title": "面板打开时自动刷新",
+      "component": "Switch",
+      "value": true
+    }
+  ]
+}
