@@ -1,0 +1,113 @@
+{
+    "schema_version":  1,
+    "name":  "CcoreBox Plugin Hub",
+    "plugins":  [
+                    {
+                        "id":  "plugin-hello",
+                        "name":  "Hello 示例",
+                        "version":  "1.0.0",
+                        "description":  "最小示例：安装与手动运行时各发送一条系统通知。",
+                        "code_url":  "plugins/plugin-hello.js",
+                        "sha256":  "5f08139ca119edbe1b2d0b4ed6bbce205f26452ff71cec1550428361c82ed40f",
+                        "permissions":  [
+                                            "notify"
+                                        ],
+                        "triggers":  [
+                                         "onInstall",
+                                         "onManual"
+                                     ],
+                        "group":  "示例",
+                        "tags":  [
+                                     "示例",
+                                     "通知"
+                                 ]
+                    },
+                    {
+                        "id":  "plugin-http-probe",
+                        "name":  "HTTP 探测",
+                        "version":  "1.0.0",
+                        "description":  "对配置的地址发起一次请求，记录状态码与耗时到插件数据目录。",
+                        "code_url":  "plugins/plugin-http-probe.js",
+                        "sha256":  "d7704697bb4a298d082a233bfdbbce23585f4c596dfa2d979843179587315f52",
+                        "permissions":  [
+                                            "net",
+                                            "notify",
+                                            "fs:data"
+                                        ],
+                        "triggers":  [
+                                         "onManual"
+                                     ],
+                        "group":  "示例",
+                        "tags":  [
+                                     "网络",
+                                     "探测"
+                                 ],
+                        "configuration":  [
+                                              {
+                                                  "id":  "url",
+                                                  "key":  "url",
+                                                  "title":  "探测地址",
+                                                  "description":  "必须是公网 HTTPS 地址。",
+                                                  "component":  "Input",
+                                                  "value":  "https://www.gstatic.com/generate_204"
+                                              },
+                                              {
+                                                  "id":  "method",
+                                                  "key":  "method",
+                                                  "title":  "请求方法",
+                                                  "component":  "Select",
+                                                  "value":  "GET",
+                                                  "options":  [
+                                                                  {
+                                                                      "label":  "GET",
+                                                                      "value":  "GET"
+                                                                  },
+                                                                  {
+                                                                      "label":  "HEAD",
+                                                                      "value":  "HEAD"
+                                                                  }
+                                                              ]
+                                              },
+                                              {
+                                                  "id":  "enable-notify",
+                                                  "key":  "notify",
+                                                  "title":  "结果通知",
+                                                  "component":  "Switch",
+                                                  "value":  true
+                                              }
+                                          ]
+                    },
+                    {
+                        "id":  "plugin-dashboard",
+                        "name":  "仪表盘示例",
+                        "version":  "1.0.0",
+                        "description":  "带自定义界面的示例：请求地址、展示状态码并保存最近结果。",
+                        "code_url":  "plugins/plugin-dashboard.js",
+                        "sha256":  "94658b6eb7fa976b44a0bb7cfa9fd5658a0c8ded3502b7fc2a9b0311c5252a72",
+                        "permissions":  [
+                                            "ui",
+                                            "net",
+                                            "notify",
+                                            "fs:data"
+                                        ],
+                        "triggers":  [
+                                         "onManual"
+                                     ],
+                        "group":  "示例",
+                        "tags":  [
+                                     "界面",
+                                     "示例"
+                                 ],
+                        "configuration":  [
+                                              {
+                                                  "id":  "url",
+                                                  "key":  "url",
+                                                  "title":  "默认地址",
+                                                  "description":  "界面打开时填入输入框。",
+                                                  "component":  "Input",
+                                                  "value":  "https://www.gstatic.com/generate_204"
+                                              }
+                                          ]
+                    }
+                ]
+}

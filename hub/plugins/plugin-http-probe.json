@@ -1,0 +1,38 @@
+{
+  "id": "plugin-http-probe",
+  "name": "HTTP 探测",
+  "version": "1.0.0",
+  "description": "对配置的地址发起一次请求，记录状态码与耗时到插件数据目录。",
+  "group": "示例",
+  "tags": ["网络", "探测"],
+  "permissions": ["net", "notify", "fs:data"],
+  "triggers": ["onManual"],
+  "configuration": [
+    {
+      "id": "url",
+      "key": "url",
+      "title": "探测地址",
+      "description": "必须是公网 HTTPS 地址。",
+      "component": "Input",
+      "value": "https://www.gstatic.com/generate_204"
+    },
+    {
+      "id": "method",
+      "key": "method",
+      "title": "请求方法",
+      "component": "Select",
+      "value": "GET",
+      "options": [
+        { "label": "GET", "value": "GET" },
+        { "label": "HEAD", "value": "HEAD" }
+      ]
+    },
+    {
+      "id": "enable-notify",
+      "key": "notify",
+      "title": "结果通知",
+      "component": "Switch",
+      "value": true
+    }
+  ]
+}

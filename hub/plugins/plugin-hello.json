@@ -1,0 +1,10 @@
+{
+  "id": "plugin-hello",
+  "name": "Hello 示例",
+  "version": "1.0.0",
+  "description": "最小示例：安装与手动运行时各发送一条系统通知。",
+  "group": "示例",
+  "tags": ["示例", "通知"],
+  "permissions": ["notify"],
+  "triggers": ["onInstall", "onManual"]
+}

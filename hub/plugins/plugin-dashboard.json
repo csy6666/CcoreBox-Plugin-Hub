@@ -1,0 +1,20 @@
+{
+  "id": "plugin-dashboard",
+  "name": "仪表盘示例",
+  "version": "1.0.0",
+  "description": "带自定义界面的示例：请求地址、展示状态码并保存最近结果。",
+  "group": "示例",
+  "tags": ["界面", "示例"],
+  "permissions": ["ui", "net", "notify", "fs:data"],
+  "triggers": ["onManual"],
+  "configuration": [
+    {
+      "id": "url",
+      "key": "url",
+      "title": "默认地址",
+      "description": "界面打开时填入输入框。",
+      "component": "Input",
+      "value": "https://www.gstatic.com/generate_204"
+    }
+  ]
+}
