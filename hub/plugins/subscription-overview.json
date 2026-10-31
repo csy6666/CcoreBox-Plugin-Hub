@@ -1,0 +1,10 @@
+{
+  "id": "subscription-overview",
+  "name": "订阅概览",
+  "version": "1.0.0",
+  "description": "只读汇总订阅用量、节点数与更新状态；不显示订阅地址。",
+  "group": "示例",
+  "tags": ["订阅", "界面", "只读"],
+  "permissions": ["ui", "subscriptions:read"],
+  "triggers": ["onManual"]
+}

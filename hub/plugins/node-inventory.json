@@ -1,0 +1,10 @@
+{
+  "id": "node-inventory",
+  "name": "节点清单",
+  "version": "1.0.0",
+  "description": "只读展示当前配置的节点：类型、服务器、端口、标签与收藏，可按关键字过滤。",
+  "group": "示例",
+  "tags": ["节点", "界面", "只读"],
+  "permissions": ["ui", "profiles:read"],
+  "triggers": ["onManual"]
+}

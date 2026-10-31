@@ -78,6 +78,27 @@
                                           ]
                     },
                     {
+                        "id":  "subscription-overview",
+                        "name":  "订阅概览",
+                        "version":  "1.0.0",
+                        "description":  "只读汇总订阅用量、节点数与更新状态；不显示订阅地址。",
+                        "code_url":  "plugins/subscription-overview.js",
+                        "sha256":  "56f3c20964d4ba159ca129041a68a66d674b00fc13ff1e51ef387332ef12ac56",
+                        "permissions":  [
+                                            "ui",
+                                            "subscriptions:read"
+                                        ],
+                        "triggers":  [
+                                         "onManual"
+                                     ],
+                        "group":  "示例",
+                        "tags":  [
+                                     "订阅",
+                                     "界面",
+                                     "只读"
+                                 ]
+                    },
+                    {
                         "id":  "subscription-insight",
                         "name":  "订阅用量看板",
                         "version":  "1.0.0",
@@ -256,6 +277,27 @@
                                                               ]
                                               }
                                           ]
+                    },
+                    {
+                        "id":  "node-inventory",
+                        "name":  "节点清单",
+                        "version":  "1.0.0",
+                        "description":  "只读展示当前配置的节点：类型、服务器、端口、标签与收藏，可按关键字过滤。",
+                        "code_url":  "plugins/node-inventory.js",
+                        "sha256":  "25e60b7050cb5a8dd0719b0f3cdeb1449e51ae5f86009d4fbbdc807199ad8d16",
+                        "permissions":  [
+                                            "ui",
+                                            "profiles:read"
+                                        ],
+                        "triggers":  [
+                                         "onManual"
+                                     ],
+                        "group":  "示例",
+                        "tags":  [
+                                     "节点",
+                                     "界面",
+                                     "只读"
+                                 ]
                     },
                     {
                         "id":  "plugin-dashboard",

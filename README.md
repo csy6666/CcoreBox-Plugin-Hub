@@ -11,6 +11,8 @@ CcoreBox 插件中心的官方插件仓库。主项目：[CcoreBox](https://gith
 | `subscription-insight` | 界面 | `ui` `net` `fs:data` | 订阅流量、到期与最近检查结果 |
 | `core-event-log` | 混合 | `ui` `fs:data` `notify` | 核心启停时间线，用于排查断线 |
 | `share-link-inspector` | 界面 | `ui` | 分享链接解析，凭据默认打码 |
+| `node-inventory` | 界面 | `ui` `profiles:read` | 当前配置的节点清单，可切换配置与过滤 |
+| `subscription-overview` | 界面 | `ui` `subscriptions:read` | 订阅用量与更新状态汇总，不显示订阅地址 |
 | `plugin-dashboard` | 界面 | `ui` `net` `notify` `fs:data` | 界面与 RPC 示例 |
 | `plugin-http-probe` | 无界面 | `net` `notify` `fs:data` | 配置项与 HTTP 探测示例 |
 | `plugin-hello` | 无界面 | `notify` | 最小插件示例 |
@@ -90,7 +92,9 @@ CcoreBox 插件中心的官方插件仓库。主项目：[CcoreBox](https://gith
 | `net` | `http.request`，仅公网 HTTPS，禁止私网地址 |
 | `notify` | 系统通知 |
 | `ui` | 允许渲染自定义界面 |
-| `clipboard` / `profiles:*` / `subscriptions:*` / `tray` / `exec` | 已定义，尚未开放实现 |
+| `profiles:read` | `profiles.list`：配置列表与节点路由信息（不含凭据） |
+| `subscriptions:read` | `subscriptions.list`：订阅元数据与用量（不含订阅地址） |
+| `clipboard` / `profiles:write` / `subscriptions:write` / `tray` / `exec` | 已定义，尚未开放实现 |
 
 ### 触发器
 
@@ -138,7 +142,13 @@ ccorebox.fs.list(path)            // 需要 fs:data
 ccorebox.fs.remove(path)          // 需要 fs:data
 ccorebox.http.request({ method, url, headers, body })  // 需要 net
 ccorebox.notify(title, body)      // 需要 notify
+ccorebox.rpc('profiles.list', { profileId: '' })        // 需要 profiles:read
+ccorebox.rpc('subscriptions.list', {})                  // 需要 subscriptions:read
 ```
+
+`profiles.list` 返回 `{ selected_profile_id, profile_id, profiles, nodes, total_nodes, truncated }`，节点最多 2000 条，只含 `tag` / `type` / `server` / `port` / `tls` / `server_name` / `label` / `favorite`。
+
+`subscriptions.list` 返回数组，字段含 `host`、`node_count`、`usage` 等；**不返回订阅 URL**，`last_error` 中的链接会被替换为 `<url>`。
 
 ## 带界面的插件
 
