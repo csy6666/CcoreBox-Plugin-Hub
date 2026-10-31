@@ -10,6 +10,7 @@ CcoreBox 插件中心的官方插件仓库。主项目：[CcoreBox](https://gith
 |---|---|---|---|
 | `subscription-insight` | 界面 | `ui` `net` `fs:data` | 订阅流量、到期与最近检查结果 |
 | `core-event-log` | 混合 | `ui` `fs:data` `notify` | 核心启停时间线，用于排查断线 |
+| `share-link-inspector` | 界面 | `ui` | 分享链接解析，凭据默认打码 |
 | `plugin-dashboard` | 界面 | `ui` `net` `notify` `fs:data` | 界面与 RPC 示例 |
 | `plugin-http-probe` | 无界面 | `net` `notify` `fs:data` | 配置项与 HTTP 探测示例 |
 | `plugin-hello` | 无界面 | `notify` | 最小插件示例 |

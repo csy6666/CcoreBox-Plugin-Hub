@@ -1,0 +1,20 @@
+{
+  "id": "share-link-inspector",
+  "name": "分享链接体检",
+  "version": "1.0.0",
+  "description": "粘贴 vmess、vless、trojan、ss、ssr、hysteria2、tuic 链接，解析服务器、传输与凭据，默认打码。",
+  "group": "工具",
+  "tags": ["链接", "解析", "安全"],
+  "permissions": ["ui"],
+  "triggers": ["onManual"],
+  "configuration": [
+    {
+      "id": "show-secrets",
+      "key": "showSecrets",
+      "title": "显示完整凭据",
+      "description": "开启后显示完整 UUID 或密码，默认只显示前 8 位。",
+      "component": "Switch",
+      "value": false
+    }
+  ]
+}
