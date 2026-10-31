@@ -1,6 +1,8 @@
 # CcoreBox-Plugin-Hub
 
-CcoreBox 插件中心的官方插件仓库。所有插件都是 **纯前端 JS 模块**，由 CcoreBox 在 Web Worker（无界面）或 sandbox iframe（带界面）中执行，通过受限 RPC 访问网络、通知与插件私有数据目录。
+CcoreBox 插件中心的官方插件仓库。主项目：[CcoreBox](https://github.com/csy6666/ccorebox_Windows)。
+
+所有插件都是 **纯前端 JS 模块**，由 CcoreBox 在 Web Worker（无界面）或 sandbox iframe（带界面）中执行，通过受限 RPC 访问网络、通知与插件私有数据目录。
 
 ## 目录结构
 
