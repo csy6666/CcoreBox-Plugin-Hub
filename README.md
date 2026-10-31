@@ -170,7 +170,7 @@ CcoreBox 只接受**公网 HTTPS** 目录地址，`localhost`、私网 IP、带�
 4. 目录地址为：
 
 ```
-https://<用户名>.github.io/CcoreBox-Plugin-Hub/plugins.json
+https://csy6666.github.io/CcoreBox-Plugin-Hub/plugins.json
 ```
 
 把这个地址填进 CcoreBox 插件中心的 Hub 源即可。
